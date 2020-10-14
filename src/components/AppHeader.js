@@ -1,1 +1,18 @@
 import React, { Component } from "react";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
+
+class AppHeader extends Component {
+  render() {
+    return (
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" color="inherit">
+            My React App
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    );
+  }
+}
+
+export default AppHeader;
