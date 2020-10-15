@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from "react";
+import { Route, Switch } from "react-router-dom";
+import { LoginCallback } from "@okta/okta-react";
 import { CssBaseline, withStyles } from "@material-ui/core";
 
 import AppHeader from "./AppHeader";
@@ -24,7 +26,14 @@ class App extends Component {
         <CssBaseline />
         <AppHeader />
         <main className={this.props.classes.main}>
-          <Home />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/implicit/callback">
+              <LoginCallback />
+            </Route>
+          </Switch>
         </main>
       </Fragment>
     );
